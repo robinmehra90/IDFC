@@ -2,15 +2,52 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SelectBox from '../components/common/SelectBox';
+import TextBox from '../components/common/TextBox';
+import ErrorBoundary from '../components/common/ErrorBoundary';
 
 class App extends Component{
+    constructor(props) {
+        super(props);
+        this.state={
+            treeSelected: '',
+            treeValue: ''
+        }
+    }
+
+    handleTreeChange = (tree) => {
+        this.setState({ treeSelected: tree })
+    };
+
+    onChangeHandler = (e) => {
+        this.setState({treeValue: e.target.value})
+    };
 
     render(){
+        const treeOptions = ["Mango", "Peepal", "Banana", "Coconut"];
+        const { treeSelected, treeValue } = this.state;
         return (
            <div>
-               <Header/>
-               IDFC
-               <Footer/>
+               <ErrorBoundary>
+                   <Header/>
+               </ErrorBoundary>
+               <ErrorBoundary>
+                   <SelectBox
+                       selectOptions={treeOptions}
+                       selectValue={treeSelected}
+                       handleOptionChange={this.handleTreeChange}
+                   />
+               </ErrorBoundary>
+               <ErrorBoundary>
+                   <TextBox
+                       id="tree" type="text" value={treeValue}
+                       placeholder="Enter Tree Name"
+                       onChangeHandler={this.onChangeHandler}
+                   />
+               </ErrorBoundary>
+               <ErrorBoundary>
+                   <Footer/>
+               </ErrorBoundary>
            </div>
         )
     }
