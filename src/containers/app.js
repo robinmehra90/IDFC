@@ -4,6 +4,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SelectBox from '../components/common/SelectBox';
 import TextBox from '../components/common/TextBox';
+import Button from '../components/common/Button';
 import ErrorBoundary from '../components/common/ErrorBoundary';
 
 class App extends Component{
@@ -21,6 +22,10 @@ class App extends Component{
 
     onChangeHandler = (e) => {
         this.setState({treeValue: e.target.value})
+    };
+
+    buttonClick = () => {
+        alert("Said your name. Now What?")
     };
 
     render(){
@@ -44,6 +49,9 @@ class App extends Component{
                        placeholder="Enter Tree Name"
                        onChangeHandler={this.onChangeHandler}
                    />
+               </ErrorBoundary>
+               <ErrorBoundary>
+                   <Button onClick={this.buttonClick}>SAY MY NAME</Button>
                </ErrorBoundary>
                <ErrorBoundary>
                    <Footer/>
