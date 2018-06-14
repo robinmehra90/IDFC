@@ -4,13 +4,20 @@ import s from './styles.scss'
 
 class TextBox extends Component {
     render() {
-        const { type, value, id, onChangeHandler, placeholder, classNames } = this.props;
+        const { type, value, id, onChangeHandler, placeholder, classNames, title } = this.props;
         return(
-            <input id={id}
-                   className={"custom-textbox " + (classNames ? classNames : '')}
-                   type={type} value={value}
-                   onChange= {(e) => onChangeHandler(e)}
-                   placeholder={placeholder} />
+            <div>
+                <label className={"field a-field a-field_a1 page__field " + (classNames ? classNames : '')}>
+                    <input type={type} value={value}
+                           className="field__input"
+                           onChange={(e) => onChangeHandler(e)}
+                           placeholder={placeholder}
+                           required />
+                  <span className="field__label-wrap">
+                    <span className="field__label">{title}</span>
+                  </span>
+                </label>
+            </div>
         )
     }
 }
