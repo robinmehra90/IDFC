@@ -26,14 +26,14 @@ class SelectBox extends Component {
     };
 
     render() {
-        const { selectValue, classNames, selectOptions } = this.props;
+        const { selectValue, classNames, selectOptions, placeholder } = this.props;
         const { openDropdown } = this.state;
         let options = selectOptions.map((option, key) => {
             return <li key={key} onClick={() => this.handleOptionChange(option)}>{option}</li>
         });
         return(
             <div className="custom-selectbox-wrapper">
-                <div onClick={this.handleSelect} className={"custom-selectbox " + (classNames ? classNames : '')}>{selectValue}</div>
+                <div onClick={this.handleSelect} className={"custom-selectbox " + (classNames ? classNames : '')}>{selectValue === '' ? placeholder ? placeholder : 'Select an option' : selectValue}</div>
                 { openDropdown ?
                     <ul className="open-select">
                         {options}
