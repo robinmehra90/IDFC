@@ -7,7 +7,7 @@ class TextBox extends Component {
         const { type, value, id, onChangeHandler, placeholder, classNames } = this.props;
         return(
             <input id={id}
-                   className={"custom-textbox " + classNames ? classNames : ''}
+                   className={"custom-textbox " + (classNames ? classNames : '')}
                    type={type} value={value}
                    onChange= {(e) => onChangeHandler(e)}
                    placeholder={placeholder} />
