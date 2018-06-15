@@ -10,7 +10,7 @@ class Card extends Component {
 
     render() {
         const { title, classNames, descripdtion, links } = this.props;
-        const links = link.map((link) => {
+        const links = links.map((link) => {
             return (<link to={link}>{link}</link>)
         });
         return(

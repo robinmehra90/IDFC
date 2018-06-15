@@ -6,6 +6,7 @@ import SelectBox from '../components/common/SelectBox';
 import TextBox from '../components/common/TextBox';
 import Button from '../components/common/Button';
 import ErrorBoundary from '../components/common/ErrorBoundary';
+import Modal from '../components/common/Modal';
 
 class App extends Component{
     constructor(props) {
@@ -53,6 +54,13 @@ class App extends Component{
                </ErrorBoundary>
                <ErrorBoundary>
                    <Button onClick={this.buttonClick}>SAY MY NAME</Button>
+               </ErrorBoundary>
+               <ErrorBoundary>
+                   <Modal buttonText="LOGIN"
+                          title="Login"
+                          handleSubmit={this.buttonClick}>
+                       <h1>dfjbhjjfgjk</h1>
+                   </Modal>
                </ErrorBoundary>
                <ErrorBoundary>
                    <Footer/>
