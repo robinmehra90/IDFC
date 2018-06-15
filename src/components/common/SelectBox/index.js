@@ -31,9 +31,10 @@ class SelectBox extends Component {
         let options = selectOptions.map((option, key) => {
             return <li key={key} onClick={() => this.handleOptionChange(option)}>{option}</li>
         });
+        let selectedValue = selectValue === '' ? placeholder ? placeholder : 'Select an option' : selectValue;
         return(
             <div className="custom-selectbox-wrapper">
-                <div onClick={this.handleSelect} className={"custom-selectbox " + (classNames ? classNames : '')}>{selectValue === '' ? placeholder ? placeholder : 'Select an option' : selectValue}</div>
+                <div onClick={this.handleSelect} className={"custom-selectbox " + (classNames ? classNames : '')}>{selectedValue}</div>
                 { openDropdown ?
                     <ul className="open-select">
                         {options}

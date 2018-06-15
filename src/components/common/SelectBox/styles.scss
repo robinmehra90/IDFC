@@ -5,6 +5,7 @@
   .custom-selectbox {
     width: 200px;
     height: 40px;
+    color: #87508a;
     border-bottom: 1px solid $input-color;
     margin: 10px 0;
     padding: 10px 15px;
@@ -20,6 +21,7 @@
     position: absolute;
     top: 40px;
     left: 0;
+    z-index: 1;
     li {
       list-style-type: none;
       padding: 10px 15px;
