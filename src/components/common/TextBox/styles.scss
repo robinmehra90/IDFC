@@ -3,7 +3,7 @@
 //LEVEL 1. RESET STYLES
 .field{
   --uiFieldPlaceholderColor: var(--fieldPlaceholderColor, #767676);
-  margin: 1rem 0;
+  margin: 0 0 1rem;
 }
 
 .field__input{

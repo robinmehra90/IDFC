@@ -13,7 +13,9 @@ class App extends Component{
         super(props);
         this.state={
             treeSelected: '',
-            treeValue: ''
+            treeValue: '',
+            empID: '',
+            password: ''
         }
     }
 
@@ -22,16 +24,16 @@ class App extends Component{
     };
 
     onChangeHandler = (e) => {
-        this.setState({treeValue: e.target.value})
+        this.setState({[e.target.name]: e.target.value})
     };
 
     buttonClick = () => {
-        alert("Said your name. Now What?")
+        alert("Heisenberg")
     };
 
     render(){
         const treeOptions = ["Mango", "Peepal", "Banana", "Coconut"];
-        const { treeSelected, treeValue } = this.state;
+        const { treeSelected, treeValue, empID, password } = this.state;
         return (
            <div>
                <ErrorBoundary>
@@ -46,7 +48,7 @@ class App extends Component{
                </ErrorBoundary>
                <ErrorBoundary>
                    <TextBox
-                       id="tree" type="text" value={treeValue}
+                       type="text" name="treeValue" value={treeValue}
                        placeholder="Enter Tree Name"
                        title="Tree"
                        onChangeHandler={this.onChangeHandler}
@@ -58,8 +60,21 @@ class App extends Component{
                <ErrorBoundary>
                    <Modal buttonText="LOGIN"
                           title="Login"
-                          handleSubmit={this.buttonClick}>
-                       <h1>dfjbhjjfgjk</h1>
+                          handleSubmit={this.buttonClick}
+                          links={['/forgotPassword', '/changePassword']}
+                   >
+                       <TextBox
+                           type="text" name="empID" value={empID}
+                           placeholder="Enter Employee ID"
+                           title="EMPLOYEE ID"
+                           onChangeHandler={this.onChangeHandler}
+                       />
+                       <TextBox
+                           type="password" name="password" value={password}
+                           placeholder="Enter Password"
+                           title="Password"
+                           onChangeHandler={this.onChangeHandler}
+                       />
                    </Modal>
                </ErrorBoundary>
                <ErrorBoundary>

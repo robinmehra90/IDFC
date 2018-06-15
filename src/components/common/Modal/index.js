@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
+import Button from '../Button';
 
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './styles.scss';
@@ -10,41 +12,45 @@ class Modal extends Component {
     }
 
     componentWillMount() {
-        document.getElementsByTagName('body').overflow = 'hidden'
+        document.getElementsByTagName('HTML')[0].style.overflow = 'hidden'
     }
 
     handleSubmit = () => {
-        document.getElementsByTagName('body').overflow = 'auto';
+        document.getElementsByTagName('HTML')[0].style.overflow = 'auto';
         this.props.handleSubmit();
     };
 
     handleCancel = () => {
-        document.getElementsByTagName('body').overflow = 'auto';
+        document.getElementsByTagName('HTML')[0].styleoverflow = 'auto';
         this.props.handleCancel();
     };
 
     render () {
-        const { width, buttonText, title, children, handleCancel, link, classNames } = this.props;
-        const links = link ?
-            (link.map((link) => {
-                return (<link to={link}>{link}</link>)
+        const { width, buttonText, title, children, handleCancel, links, classNames } = this.props;
+        const modalLinks = links ?
+            (links.map((link, key) => {
+                return (<Link key={key} to="/fd">{link}</Link>)
             }))
             : '';
         return (
-            <div style={{width: width ? width : '100%'}} className={"custom-modal " + classNames ? classNames : ''}>
-                <header>{title}</header>
-                <div className="modal-body">
-                    {children}
+            <div className={"custom-modal " + (classNames ? classNames : '')}>
+                <div style={{width: width || '30%'}} className="modal-wrap">
+                    <header>
+                        <h1>{title}</h1>
+                    </header>
+                    <div className="modal-body">
+                        {children}
+                    </div>
+                    <footer>
+                        <Button className="footer-button" onClick={this.handleSubmit}>{buttonText}</Button>
+                        {
+                            handleCancel ?
+                                <button onClick={this.handleCancel}>Cancel</button>
+                                : null
+                        }
+                        {links}
+                    </footer>
                 </div>
-                <footer>
-                    <button className="footer-button" onClick={this.handleSubmit}>{buttonText}</button>
-                    {
-                        handleCancel ?
-                            <button onClick={this.handleCancel}>Cancel</button>
-                            : null
-                    }
-                    {links}
-                </footer>
             </div>
         )
     }
