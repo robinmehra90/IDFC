@@ -5,22 +5,33 @@
   background: rgba(135,80,138,0.5);
   top: 0;
   .modal-wrap {
-    margin: 50px auto;
+    margin: auto;
     background: #fff;
     box-shadow: 0 0 15px #000;
     border-radius: 5px;
     overflow: hidden;
-    padding: 20px 60px;
-    header h1 {
-      font-size: 32px;
-      font-weight: bold;
-      color: #87508A;
+    position: absolute;
+    padding: 0;
+    top: 50%;
+    left:0;
+    right:0;
+    height: auto;
+    transform: translateY(-50%);
+    header {
+      padding: 20px 60px 10px;
+      h3 {
+        font-size: 32px;
+        font-weight: bold;
+        color: #87508A;
+        margin: 0;
+      }
     }
     .modal-body {
-      max-height: calc(100vh - 230px);
-      min-height: calc(100vh - 270px);
-      margin: 20px 0;
+      padding: 20px 60px;
       overflow: auto;
+    }
+    footer{
+      padding: 0 60px 20px;
     }
   }
 }

@@ -33,7 +33,7 @@
 
 //LEVEL 2. CORE STYLES
 .field{
-  display: inline-block;
+  display: block;
 }
 
 .field__input{
@@ -65,7 +65,7 @@
 
 .a-field .field__input{
   height: var(--uiFieldHeight);
-  padding: 10px var(--uiFieldPaddingRight) 10px var(--uiFieldPaddingLeft);
+  padding: 10px 0;
   border-bottom: var(--uiFieldBorderWidth) solid var(--uiFieldBorderColor);
 }
 
@@ -109,9 +109,7 @@
 
 .a-field .field__label{
   position: absolute;
-  left: var(--uiFieldPaddingLeft);
   bottom: calc(50% - .4em);
-
   line-height: 1;
   font-size: var(--uiFieldHintFontSize);
 
@@ -140,4 +138,13 @@
 .field{
   --fieldBorderColor: #D1C4E9;
   --fieldBorderColorActive: #87508a;
+}
+
+.error-msg{
+  color:red;
+  display: block;
+}
+
+.input_text_box{
+  margin: 10px 0 0;
 }

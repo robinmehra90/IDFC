@@ -36,19 +36,21 @@ class Modal extends Component {
             <div className={"custom-modal " + (classNames ? classNames : '')}>
                 <div style={{width: width || '30%'}} className="modal-wrap">
                     <header>
-                        <h1>{title}</h1>
+                        <h3>{title}</h3>
                     </header>
                     <div className="modal-body">
                         {children}
                     </div>
                     <footer>
                         <Button className="footer-button" onClick={this.handleSubmit}>{buttonText}</Button>
-                        {
-                            handleCancel ?
-                                <button onClick={this.handleCancel}>Cancel</button>
-                                : null
-                        }
-                        {links}
+                        <div className="footer-links">
+                            {
+                                handleCancel ?
+                                    <button onClick={this.handleCancel}>Cancel</button>
+                                    : null
+                            }
+                            {links}
+                        </div>
                     </footer>
                 </div>
             </div>

@@ -3,19 +3,15 @@ import {connect} from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import SelectBox from '../components/common/SelectBox';
-import TextBox from '../components/common/TextBox';
 import Button from '../components/common/Button';
 import ErrorBoundary from '../components/common/ErrorBoundary';
-import Modal from '../components/common/Modal';
+import ForgotPassword from '../components/Modal/Forgotpassword';
 
 class App extends Component{
     constructor(props) {
         super(props);
         this.state={
-            treeSelected: '',
-            treeValue: '',
-            empID: '',
-            password: ''
+            treeSelected: ''
         }
     }
 
@@ -33,7 +29,7 @@ class App extends Component{
 
     render(){
         const treeOptions = ["Mango", "Peepal", "Banana", "Coconut"];
-        const { treeSelected, treeValue, empID, password } = this.state;
+        const { treeSelected } = this.state;
         return (
            <div>
                <ErrorBoundary>
@@ -46,36 +42,12 @@ class App extends Component{
                        handleOptionChange={this.handleTreeChange}
                    />
                </ErrorBoundary>
-               <ErrorBoundary>
-                   <TextBox
-                       type="text" name="treeValue" value={treeValue}
-                       placeholder="Enter Tree Name"
-                       title="Tree"
-                       onChangeHandler={this.onChangeHandler}
-                   />
-               </ErrorBoundary>
+
                <ErrorBoundary>
                    <Button onClick={this.buttonClick}>SAY MY NAME</Button>
                </ErrorBoundary>
                <ErrorBoundary>
-                   <Modal buttonText="LOGIN"
-                          title="Login"
-                          handleSubmit={this.buttonClick}
-                          links={['/forgotPassword', '/changePassword']}
-                   >
-                       <TextBox
-                           type="text" name="empID" value={empID}
-                           placeholder="Enter Employee ID"
-                           title="EMPLOYEE ID"
-                           onChangeHandler={this.onChangeHandler}
-                       />
-                       <TextBox
-                           type="password" name="password" value={password}
-                           placeholder="Enter Password"
-                           title="Password"
-                           onChangeHandler={this.onChangeHandler}
-                       />
-                   </Modal>
+                    <ForgotPassword/>
                </ErrorBoundary>
                <ErrorBoundary>
                    <Footer/>
