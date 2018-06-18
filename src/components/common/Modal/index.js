@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
 import { Link } from 'react-router-dom';
-
 import Button from '../Button';
-
 import withStyles from 'isomorphic-style-loader/lib/withStyles';
 import s from './styles.scss';
 
