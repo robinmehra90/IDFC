@@ -1,0 +1,16 @@
+@import "../../../scss/variable";
+
+.idfc-main-button {
+  padding: 10px 25px;
+  background: $btn-dark-bg;
+  outline: none;
+  color: #fff;
+  border: 1px solid $btn-dark-bg;
+  border-radius: 5px;
+  cursor: pointer;
+  &:hover {
+    background: #fff;
+    color: $btn-dark-bg;
+    font-weight: bold;
+  }
+}
