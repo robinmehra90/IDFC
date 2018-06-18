@@ -77,4 +77,4 @@ module.exports = {
         contentBase: parentDir,
         historyApiFallback: true
     }
-}
+};
