@@ -5,7 +5,7 @@ import Footer from '../components/Footer';
 import SelectBox from '../components/common/SelectBox';
 import Button from '../components/common/Button';
 import ErrorBoundary from '../components/common/ErrorBoundary';
-import ForgotPassword from '../components/Modal/Forgotpassword';
+import ForgotPassword from '../components/LoginFlow/Forgotpassword';
 
 class App extends Component{
     constructor(props) {
