@@ -72,6 +72,7 @@ module.exports = {
         sourceMapFilename: '[file].map',
     },
     devServer: {
+        port: process.env.PORT || 3000,
         contentBase: parentDir,
         historyApiFallback: true
     }
