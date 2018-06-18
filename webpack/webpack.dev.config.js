@@ -62,16 +62,18 @@ module.exports = {
         ]),
         new webpack.DefinePlugin({
             'process.env': {
-                'NODE_ENV': JSON.stringify(process. env.NODE_ENV)
+                'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
         }),
 ],
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, '../dist'),
         filename: '[name].js',
         sourceMapFilename: '[file].map',
+        publicPath: '/dist',
     },
     devServer: {
+        port: process.env.PORT || 3000,
         contentBase: parentDir,
         historyApiFallback: true
     }
