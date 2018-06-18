@@ -67,10 +67,10 @@ module.exports = {
         }),
 ],
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, '../dist'),
         filename: '[name].js',
         sourceMapFilename: '[file].map',
-        publicPath: '/js',
+        publicPath: '/dist',
     },
     devServer: {
         port: process.env.PORT || 3000,
