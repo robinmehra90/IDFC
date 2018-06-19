@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Modal from '../../common/Modal';
 import TextBox from '../../common/TextBox';
 
 class Register extends Component {
@@ -14,17 +13,11 @@ class Register extends Component {
     onChangeHandler = (e) => {
         this.setState({[e.target.name]: e.target.value})
     };
-    buttonClick = () => {
-        alert("Heisenberg")
-    };
+
     render() {
         const { empID, password, confirmPassword } = this.state;
         return(
-            <Modal buttonText="Submit"
-                   title="Register"
-                   handleSubmit={this.buttonClick}
-                   links={['Already registered' , 'login']}
-            >
+            <div className="register-modal">
                 <TextBox
                     type="text" name="empID" value={empID}
                     placeholder="Enter Employee ID"
@@ -43,7 +36,7 @@ class Register extends Component {
                     title="Confirm Password"
                     onChangeHandler={this.onChangeHandler}
                 />
-            </Modal>
+            </div>
         )
     }
 }

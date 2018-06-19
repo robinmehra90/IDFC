@@ -1,5 +1,4 @@
 import React, {Component} from 'react';
-import Modal from '../../common/Modal';
 import TextBox from '../../common/TextBox';
 
 class ChangePassword extends Component {
@@ -21,11 +20,7 @@ class ChangePassword extends Component {
     render() {
         const { empID, oldPassword, newPassword , confirmPassword } = this.state;
         return(
-            <Modal buttonText="Submit"
-                   title="Change Password"
-                   handleSubmit={this.buttonClick}
-                   links={['login']}
-            >
+            <div className="changepassword-modal">
                 <TextBox
                     type="text" name="empID" value={empID}
                     placeholder="Enter Employee ID"
@@ -50,7 +45,7 @@ class ChangePassword extends Component {
                     title="Confirm Password"
                     onChangeHandler={this.onChangeHandler}
                 />
-            </Modal>
+            </div>
         )
     }
 }
