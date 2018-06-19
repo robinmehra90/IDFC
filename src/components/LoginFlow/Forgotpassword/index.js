@@ -19,11 +19,7 @@ class ForgotPassword extends Component {
     render() {
         const { empID, emailID } = this.state;
         return(
-            <Modal buttonText="Submit"
-                   title="Forgot Password"
-                   handleSubmit={this.buttonClick}
-                   links={['login']}
-            >
+            <div className="forgot-modal">
                 <h4>Enter your employee ID and we’ll email you a password</h4>
                 <TextBox
                     type="text" name="empID" value={empID}
@@ -37,7 +33,7 @@ class ForgotPassword extends Component {
                     title="Email Id"
                     onChangeHandler={this.onChangeHandler}
                 />
-            </Modal>
+            </div>
         )
     }
 }
