@@ -31,9 +31,29 @@ class App extends Component{
         alert("Heisenberg")
     };
 
+    modalConfig = (modalType) => {
+        switch(modalType){
+            case 'login':
+                return <Modal title="Login" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Forgot Password', 'Change Password']} children={<Login/>} />
+                break;
+            case 'register':
+                return <Modal title="Register" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Login']} children={<Register/>} />
+                break;
+            case 'forgot':
+                return <Modal title="Forgot Password" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Login']} children={<ForgotPassword/>} />
+                break;
+            case 'change':
+                return <Modal title="Change Password" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Login']} children={<ChangePassword/>} />
+                break;
+            default :
+                null
+        }
+    };
+
     render(){
         const treeOptions = ["Mango", "Peepal", "Banana", "Coconut"];
         const { treeSelected } = this.state;
+        let modalConfig = this.modalConfig('login');
 
         return (
            <div>
@@ -51,25 +71,7 @@ class App extends Component{
                    <Button onClick={this.buttonClick}>SAY MY NAME</Button>
                </ErrorBoundary>
                <ErrorBoundary>
-                   {(() => {
-                       let modalConfig = "login";
-                       switch(modalConfig){
-                           case 'login':
-                               return <Modal title="Login" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Forgot Password', 'Change Password']} children={<Login/>} />
-                               break;
-                           case 'register':
-                               return <Modal title="Register" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Login']} children={<Register/>} />
-                               break;
-                           case 'forgot':
-                               return <Modal title="Forgot Password" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Login']} children={<ForgotPassword/>} />
-                               break;
-                           case 'change':
-                               return <Modal title="Change Password" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Login']} children={<ChangePassword/>} />
-                               break;
-                           default :
-                               null
-                       }
-                   })()}
+                   {modalConfig}
                </ErrorBoundary>
                <ErrorBoundary>
                    <Footer/>
