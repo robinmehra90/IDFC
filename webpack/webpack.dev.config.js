@@ -14,6 +14,18 @@ module.exports = {
             'react-dom',
         ],
     },
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                styles: {
+                    name: 'styles',
+                    test: /\.(sa|sc|c)ss$/,
+                    chunks: 'all',
+                    enforce: true
+                }
+            }
+        }
+    },
     module: {
         rules: [{
             test: /\.(js|jsx)$/,
@@ -22,7 +34,7 @@ module.exports = {
         },{
             test: /\.(sa|sc|c)ss$/,
             use: [
-                devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                MiniCssExtractPlugin.loader,
                 'css-loader',
                 // 'postcss-loader',
                 'sass-loader',
@@ -57,7 +69,6 @@ module.exports = {
             // Options similar to the same options in webpackOptions.output
             // both options are optional
             filename: "[name].css",
-            chunkFilename: "[id].css"
         })
     ],
     output: {
