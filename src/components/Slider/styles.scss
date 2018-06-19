@@ -1,0 +1,50 @@
+.slider-wrap{
+  background: #fafafa;
+}
+
+.slider-img{
+  width: 50%;
+  float: right;
+  text-align: right;
+  padding: 25px 0;
+  img{
+    float: right;
+  }
+}
+
+.slider-content {
+  width: 50%;
+  text-align: left;
+  float: left;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  height: auto;
+  h3{
+    font-size: 30px;
+    color: #000;
+  }
+  p{
+    font-size: 20px;
+    color:#666;
+    margin: 0 0 40px;
+  }
+}
+
+.custom-slider {
+  .slick-dots {
+    bottom: 0;
+    li{
+      width: 20px;
+      button{
+        width: 20px;
+        &:before{
+          width: 20px;
+          background: #000;
+          content:"";
+          height: 3px;
+        }
+      }
+    }
+  }
+}

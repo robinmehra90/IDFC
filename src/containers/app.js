@@ -10,6 +10,7 @@ import Login from '../components/LoginFlow/Login';
 import Register from '../components/LoginFlow/Register';
 import ForgotPassword from '../components/LoginFlow/Forgotpassword';
 import ChangePassword from '../components/LoginFlow/Changepassword';
+import SliderComponent from '../components/Slider';
 
 class App extends Component{
     constructor(props) {
@@ -59,6 +60,9 @@ class App extends Component{
            <div>
                <ErrorBoundary>
                    <Header/>
+               </ErrorBoundary>
+               <ErrorBoundary>
+                   <SliderComponent />
                </ErrorBoundary>
                <ErrorBoundary>
                    <SelectBox
