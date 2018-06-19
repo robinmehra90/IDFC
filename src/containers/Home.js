@@ -2,6 +2,8 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import SelectBox from '../components/common/SelectBox';
+import Button from '../components/common/Button';
 import Modal from '../components/common/Modal';
 import ErrorBoundary from '../components/common/ErrorBoundary';
 import Login from '../components/LoginFlow/Login';
@@ -10,7 +12,7 @@ import ForgotPassword from '../components/LoginFlow/Forgotpassword';
 import ChangePassword from '../components/LoginFlow/Changepassword';
 import SliderComponent from '../components/Slider';
 
-class App extends Component{
+class Home extends Component{
     constructor(props) {
         super(props);
         this.state={
@@ -55,32 +57,22 @@ class App extends Component{
         let modalConfig = this.modalConfig('login');
 
         return (
-           <div>
-               <ErrorBoundary>
-                   <Header/>
-               </ErrorBoundary>
-               <ErrorBoundary>
-                   <SliderComponent />
-               </ErrorBoundary>
-               <ErrorBoundary>
-                   <SelectBox
-                       selectOptions={treeOptions}
-                       selectValue={treeSelected}
-                       handleOptionChange={this.handleTreeChange}
-                   />
-               </ErrorBoundary>
-               <ErrorBoundary>
-                   <Button onClick={this.buttonClick}>SAY MY NAME</Button>
-               </ErrorBoundary>
-               <ErrorBoundary>
-                   {modalConfig}
-               </ErrorBoundary>
-               <ErrorBoundary>
-                   <Footer/>
-               </ErrorBoundary>
-           </div>
+            <div>
+                <ErrorBoundary>
+                    <Header/>
+                </ErrorBoundary>
+                <ErrorBoundary>
+                    <SliderComponent />
+                </ErrorBoundary>
+                <ErrorBoundary>
+                    <Footer/>
+                </ErrorBoundary>
+                <ErrorBoundary>
+                    {modalConfig}
+                </ErrorBoundary>
+            </div>
         )
     }
 }
 
-export default connect(state => state)(App);
+export default connect(state => state)(Home);
