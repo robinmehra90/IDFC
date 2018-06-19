@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss'
+import './styles.scss'
 
-class Button extends Component {
+export default class Button extends Component {
     render() {
         const {  onClick, children, classNames } = this.props;
         return(
@@ -10,5 +9,3 @@ class Button extends Component {
         )
     }
 }
-
-export default withStyles(s)(Button);

@@ -7,8 +7,18 @@
     "start": "node index.js",
     "build": "webpack --config ./webpack/webpack.dev.config.js --mode production",
     "build:production": "cross-env NODE_ENV=production webpack-dev-server --config ./webpack/webpack.dev.config.js --mode production",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.config.js --mode development --open --hot --env local"
+  },
+  "jest": {
+    "setupFiles": [
+      "./test/jestsetup.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -67,9 +77,9 @@
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",
-    "isomorphic-style-loader": "^4.0.0",
     "jest": "^23.1.0",
     "jest-enzyme": "^6.0.1",
+    "mini-css-extract-plugin": "^0.4.0",
     "node-sass": "^4.9.0",
     "sass": "^1.5.1",
     "sass-loader": "^7.0.3",

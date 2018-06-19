@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import {link} from 'react-router-dom';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss';
+import './styles.scss';
 
-class Card extends Component {
+export default class Card extends Component {
     constructor(props) {
         super(props);
     }
@@ -26,5 +25,3 @@ class Card extends Component {
         )
     }
 }
-
-export default withStyles(s)(Card);

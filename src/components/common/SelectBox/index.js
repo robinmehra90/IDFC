@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
 import onClickOutside from "react-onclickoutside";
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss';
+import './styles.scss';
 
-class SelectBox extends Component {
+export default class SelectBox extends Component {
     constructor(props) {
         super(props);
         this.state= {
@@ -45,5 +44,3 @@ class SelectBox extends Component {
         )
     }
 }
-
-export default withStyles(s)(onClickOutside(SelectBox));

@@ -2,10 +2,9 @@ import React from 'react';
 import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
 import App from './containers/app';
 import PathNotFound from './containers/pathNotFound/pathNotFound';
-import s from './scss/reset.scss';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import './scss/reset.scss';
 
-class AppRoutes extends React.Component {
+export default class AppRoutes extends React.Component {
     render () {
         return (
             <BrowserRouter>
@@ -17,5 +16,3 @@ class AppRoutes extends React.Component {
         )
     }
 }
-
-export default withStyles(s)(AppRoutes);

@@ -1,8 +1,7 @@
 import React,{Component} from 'react';
-import s from './styles.scss';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
+import './styles.scss';
 
-class PathNotFound extends Component {
+export default class PathNotFound extends Component {
     render() {
         return(
             <div className="page-not-found">
@@ -12,4 +11,3 @@ class PathNotFound extends Component {
         )
     }
 }
-export default withStyles(s)(PathNotFound);

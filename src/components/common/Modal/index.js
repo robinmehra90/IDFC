@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 import Button from '../Button';
 
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss';
+import './styles.scss';
 
-class Modal extends Component {
+export default class Modal extends Component {
     constructor(props) {
         super(props);
     }
@@ -57,5 +56,3 @@ class Modal extends Component {
         )
     }
 }
-
-export default withStyles(s)(Modal);
