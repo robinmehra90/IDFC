@@ -1,10 +1,9 @@
 import React,{ Component } from 'react';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss';
+import './styles.scss';
 
 
-class Tabcomponents extends Component {
+export default class Tabcomponents extends Component {
     render () {
         return (
             <Tabs>
@@ -23,5 +22,3 @@ class Tabcomponents extends Component {
         )
     }
 }
-
-export default withStyles(s)(Tabcomponents);

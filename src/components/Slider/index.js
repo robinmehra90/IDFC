@@ -1,10 +1,9 @@
 import React, {Component} from 'react';
 import Slider from "react-slick";
 import { Link } from 'react-router-dom';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss';
+import './styles.scss';
 
-class SliderComponent extends Component {
+export default  class SliderComponent extends Component {
     constructor(props) {
         super(props);
     }
@@ -53,5 +52,3 @@ class SliderComponent extends Component {
         )
     }
 }
-
-export default withStyles(s)(SliderComponent);
