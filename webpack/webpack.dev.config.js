@@ -3,8 +3,6 @@ var path = require('path');
 var parentDir = path.join(__dirname, '../src/');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
     entry: {
@@ -13,42 +11,6 @@ module.exports = {
             'react',
             'react-dom',
         ],
-    },
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                styles: {
-                    name: 'styles',
-                    test: /\.(sa|sc|c)ss$/,
-                    chunks: 'all',
-                    enforce: true
-                }
-            }
-        }
-    },
-    module: {
-        rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        },{
-            test: /\.(sa|sc|c)ss$/,
-            use: [
-                MiniCssExtractPlugin.loader,
-                'css-loader',
-                // 'postcss-loader',
-                'sass-loader',
-            ],
-        },{
-            test: /\.(png|jp(e*)g|svg)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: 8000, // Convert images < 8kb to base64 strings
-                    name: 'images/[hash]-[name].[ext]'
-                }
-            }]
-        }]
     },
     plugins: [
         new WorkboxPlugin.GenerateSW({
@@ -64,13 +26,32 @@ module.exports = {
             'process.env': {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
-        }),
-        new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: "[name].css",
         })
     ],
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+        },{
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                // 'postcss-loader',
+                'sass-loader',
+            ],
+        },{
+            test: /\.(png|jp(e*)g|svg)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 8000, // Convert images < 8kb to base64 strings
+                    name: 'images/[hash]-[name].[ext]'
+                }
+            }]
+        }]
+    },
     output: {
         path: path.join(__dirname, '../dist'),
         filename: '[name].js',
