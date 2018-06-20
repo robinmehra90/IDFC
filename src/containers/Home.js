@@ -11,6 +11,7 @@ import Register from '../components/LoginFlow/Register';
 import ForgotPassword from '../components/LoginFlow/Forgotpassword';
 import ChangePassword from '../components/LoginFlow/Changepassword';
 import SliderComponent from '../components/Slider';
+import Tabcomponents from '../components/Tabber';
 
 class Home extends Component{
     constructor(props) {
@@ -63,6 +64,9 @@ class Home extends Component{
                 </ErrorBoundary>
                 <ErrorBoundary>
                     <SliderComponent />
+                </ErrorBoundary>
+                <ErrorBoundary>
+                    <Tabcomponents />
                 </ErrorBoundary>
                 <ErrorBoundary>
                     <Footer/>
