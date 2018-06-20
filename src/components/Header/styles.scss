@@ -28,8 +28,12 @@
     display: inline-block;
     text-align: right;
     vertical-align: middle;
+    &.text-align-left {
+      text-align: left;
+      padding-left: 5rem;
+    }
     ul{
-      llist-style: none;
+      list-style: none;
       padding: 0;
     }
     li{
@@ -49,4 +53,8 @@
       }
     }
   }
+}
+
+.pull-right {
+  float: right;
 }
