@@ -28,7 +28,7 @@ export default class Modal extends Component {
         const { width, buttonText, title, children, handleCancel, links, classNames } = this.props;
         const modalLinks = links ?
             (links.map((link, key) => {
-                return (<Link key={key} to="/fd">{link}</Link>)
+                return (<div key={key}><Link to="/fd">{link}</Link></div>)
             }))
             : '';
         return (
@@ -48,7 +48,7 @@ export default class Modal extends Component {
                                     <button onClick={this.handleCancel}>Cancel</button>
                                     : null
                             }
-                            {links}
+                            {modalLinks}
                         </div>
                     </footer>
                 </div>
