@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import Header from '../../components/Header';
 
 export default class Admin extends Component {
     constructor(props) {
@@ -18,20 +18,7 @@ export default class Admin extends Component {
     render() {
         return(
             <div className="admin-wrapper">
-                Admin
-                <Tabs>
-                    <TabList>
-                        <Tab>Title 1</Tab>
-                        <Tab>Title 2</Tab>
-                    </TabList>
-
-                    <TabPanel>
-                        <h2>Any content 1</h2>
-                    </TabPanel>
-                    <TabPanel>
-                        <h2>Any content 2</h2>
-                    </TabPanel>
-                </Tabs>
+                <Header/>
             </div>
         )
     }
