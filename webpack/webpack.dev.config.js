@@ -12,44 +12,6 @@ module.exports = {
             'react-dom',
         ],
     },
-    module: {
-        rules: [{
-            test: /\.(js|jsx)$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-        },{
-            test: /\.(sass|scss|css)$/,
-            use: [
-                'isomorphic-style-loader',
-                {
-                    loader: 'css-loader',
-                    options: {
-                        importLoaders: 1
-                    }
-                },
-                // {
-                //     loader: 'postcss-loader',
-                //     options: {
-                //         plugins: () => [require('autoprefixer')]
-                //     }
-                // },
-                {
-                    loader: 'sass-loader'
-                }
-            ]
-        },
-            {
-                test: /\.(png|jp(e*)g|svg)$/,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 8000, // Convert images < 8kb to base64 strings
-                        name: 'images/[hash]-[name].[ext]'
-                    }
-                }]
-            }
-        ]
-    },
     plugins: [
         new WorkboxPlugin.GenerateSW({
             // these options encourage the ServiceWorkers to get in there fast
@@ -64,8 +26,32 @@ module.exports = {
             'process.env': {
                 'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
             }
-        }),
-],
+        })
+    ],
+    module: {
+        rules: [{
+            test: /\.(js|jsx)$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader'
+        },{
+            test: /\.(sa|sc|c)ss$/,
+            use: [
+                'style-loader',
+                'css-loader',
+                // 'postcss-loader',
+                'sass-loader',
+            ],
+        },{
+            test: /\.(png|jp(e*)g|svg)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 8000, // Convert images < 8kb to base64 strings
+                    name: 'images/[hash]-[name].[ext]'
+                }
+            }]
+        }]
+    },
     output: {
         path: path.join(__dirname, '../dist'),
         filename: '[name].js',

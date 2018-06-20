@@ -34,5 +34,12 @@
     footer{
       padding: 0 60px 20px;
     }
+    .footer-links {
+      margin: 1rem 0;
+      a {
+        color: #666;
+        margin: 0.5rem 0;
+      }
+    }
   }
 }

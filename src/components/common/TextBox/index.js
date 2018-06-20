@@ -1,8 +1,7 @@
 import React, {Component} from 'react';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss'
+import './styles.scss'
 
-class TextBox extends Component {
+export default class TextBox extends Component {
     render() {
         const { type, value, name, onChangeHandler, placeholder, classNames, title, error } = this.props;
         return(
@@ -22,5 +21,3 @@ class TextBox extends Component {
         )
     }
 }
-
-export default withStyles(s)(TextBox);

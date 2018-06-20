@@ -1,10 +1,9 @@
 import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss';
+import './styles.scss';
 
 
-class Header extends Component {
+export default class Header extends Component {
     render () {
         return (
             <header className="header">
@@ -26,5 +25,3 @@ class Header extends Component {
         )
     }
 }
-
-export default withStyles(s)(Header);

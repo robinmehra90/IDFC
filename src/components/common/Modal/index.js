@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 import Button from '../Button';
 
-import withStyles from 'isomorphic-style-loader/lib/withStyles';
-import s from './styles.scss';
+import './styles.scss';
 
-class Modal extends Component {
+export default class Modal extends Component {
     constructor(props) {
         super(props);
     }
@@ -29,7 +28,7 @@ class Modal extends Component {
         const { width, buttonText, title, children, handleCancel, links, classNames } = this.props;
         const modalLinks = links ?
             (links.map((link, key) => {
-                return (<Link key={key} to="/fd">{link}</Link>)
+                return (<div key={key}><Link to="/fd">{link}</Link></div>)
             }))
             : '';
         return (
@@ -49,7 +48,7 @@ class Modal extends Component {
                                     <button onClick={this.handleCancel}>Cancel</button>
                                     : null
                             }
-                            {links}
+                            {modalLinks}
                         </div>
                     </footer>
                 </div>
@@ -57,5 +56,3 @@ class Modal extends Component {
         )
     }
 }
-
-export default withStyles(s)(Modal);
