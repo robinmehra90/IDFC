@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './styles.scss';
 
-export default class ToolMaster extends Component {
+export default class ReviewOrders extends Component {
     render() {
         return(
-            <div>Tool Master</div>
+            <div>Review Orders</div>
         )
     }
 }

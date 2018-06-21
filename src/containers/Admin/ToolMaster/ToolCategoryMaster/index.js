@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './styles.scss';
 
-export default class ToolMaster extends Component {
+export default class ToolCategoryMaster extends Component {
     render() {
         return(
-            <div>Tool Master</div>
+            <div>Tool Category Master</div>
         )
     }
 }
