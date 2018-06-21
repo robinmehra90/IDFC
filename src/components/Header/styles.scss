@@ -50,52 +50,6 @@
           color:$btn-dark-bg;
         }
       }
-      label{
-        padding: 10px 0;
-        display: inline-block;
-      }
-      ul{
-        width: 180px;
-        border: 1px solid $grey-color;
-        position: absolute;
-        right: 0;
-        border-radius: 5px;
-        display: none;
-        &:before{
-          content: "";
-          position: absolute;
-          top: -21px;
-          right: 15px;
-          border-left:10px solid transparent;
-          border-right:10px solid transparent;
-          border-bottom:10px solid $grey-color;
-          border-top:10px solid transparent;
-        }
-        &:after{
-          content: "";
-          position: absolute;
-          top: -18px;
-          right: 16px;
-          border-left:9px solid transparent;
-          border-right:9px solid transparent;
-          border-bottom:9px solid $white-color;
-          border-top:9px solid transparent;
-        }
-        li{
-          padding: 0;
-          display: block;
-          a{
-            padding: 5px 15px;
-            &:hover{
-              background: $btn-dark-bg;
-              color:$white-color;
-            }
-          }
-        }
-      }
-      &:hover ul{
-        display: block;
-      }
       i{
         margin-right: 10px;
       }
