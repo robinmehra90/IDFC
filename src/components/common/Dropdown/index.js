@@ -3,7 +3,7 @@ import './styles.scss';
 
 export default class Dropdown extends Component {
     render() {
-        const { listItems, header, headerIcon, handleItemClick } = this.props;
+        const { listItems, header, headerIcon, handleItemClick, dropDownWidth } = this.props;
         let list = listItems.map((item, key) => {
             return(<li key={key} className="dropdown-item" onClick={() => handleItemClick(item.funcVal)}>{item.text}</li>)
         });
@@ -17,7 +17,7 @@ export default class Dropdown extends Component {
                     {header}
                     <span className="arrow down" />
                 </label>
-                <ul className="dropdown-menu">
+                <ul className="dropdown-menu" style={{width: dropDownWidth}}>
                     {list}
                 </ul>
             </div>

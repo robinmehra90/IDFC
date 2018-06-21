@@ -45,6 +45,7 @@ export default class Header extends Component {
                             <Dropdown
                                 header="Hi Admin"
                                 headerIcon="icon-login"
+                                dropDownWidth="130px"
                                 listItems={[
                                     {text:'My Account', funcVal:"myAccount"},
                                     {text:'Logout',funcVal:"logout"}
