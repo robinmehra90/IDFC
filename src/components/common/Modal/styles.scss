@@ -1,14 +1,15 @@
+@import "../../../scss/variable";
 .custom-modal {
   width: 100%;
   position: fixed;
   height: 100vh;
-  background: rgba(135,80,138,0.5);
+  background: $less-opacity-purple;
   top: 0;
   z-index: 9;
   .modal-wrap {
     margin: auto;
-    background: #fff;
-    box-shadow: 0 0 15px #000;
+    background: $white-color;
+    box-shadow: 0 0 15px $black-color;
     border-radius: 5px;
     overflow: hidden;
     position: absolute;
@@ -23,7 +24,7 @@
       h3 {
         font-size: 32px;
         font-weight: bold;
-        color: #87508A;
+        color: $theme-base-color;
         margin: 0;
       }
     }
@@ -37,8 +38,8 @@
     .footer-links {
       margin: 1rem 0;
       a {
-        color: #666;
-        margin: 0.5rem 0;
+        color: $base-color;
+        margin: 5px 0;
       }
     }
   }

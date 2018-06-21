@@ -71,9 +71,7 @@ class Home extends Component{
                 <ErrorBoundary>
                     <Footer/>
                 </ErrorBoundary>
-                <ErrorBoundary>
-                    {modalConfig}
-                </ErrorBoundary>
+
             </div>
         )
     }

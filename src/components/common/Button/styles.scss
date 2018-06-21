@@ -4,13 +4,13 @@
   padding: 10px 25px;
   background: $btn-dark-bg;
   outline: none;
-  color: #fff;
+  color: $white-color;
   border: 1px solid $btn-dark-bg;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   &:hover {
-    background: #fff;
+    background: $white-color;
     color: $btn-dark-bg;
     font-weight: bold;
   }

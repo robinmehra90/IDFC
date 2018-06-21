@@ -1,5 +1,6 @@
+@import "../../scss/variable";
 .slider-wrap{
-  background: #fafafa;
+  background: $light-grey-color;
 }
 
 .slider-img{
@@ -22,11 +23,11 @@
   height: auto;
   h3{
     font-size: 30px;
-    color: #000;
+    color: $black-color;
   }
   p{
     font-size: 20px;
-    color:#666;
+    color:$base-color;
     margin: 0 0 40px;
   }
 }
@@ -37,15 +38,10 @@
 
 .custom-slider {
   .slick-dots {
-    bottom: 0;
-    li{
-      width: 20px;
-      button{
-        width: 20px;
-        &:before{
-          font-size: 14px;
-        }
-      }
+    bottom: 15px;
+    li button:before{
+      font-size: 14px;
+      color:$theme-base-color;
     }
   }
 }

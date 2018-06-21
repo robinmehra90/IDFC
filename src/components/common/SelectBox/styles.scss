@@ -5,7 +5,7 @@
   .custom-selectbox {
     width: 200px;
     height: 40px;
-    color: #87508a;
+    color: $theme-base-color;
     border-bottom: 1px solid $input-color;
     margin: 10px 0;
     padding: 10px 15px;
@@ -16,8 +16,8 @@
     padding: 0;
     width: 200px;
     border-radius: 3px;
-    box-shadow: 2px 2px 10px #DADADA;
-    background: #fff;
+    box-shadow: 2px 2px 10px $light-grey-color;
+    background: $white-color;
     position: absolute;
     top: 40px;
     left: 0;
@@ -27,8 +27,8 @@
       padding: 10px 15px;
       cursor: pointer;
       &:hover {
-        background: $btn-dark-bg;
-        color: #fff;
+        background: $theme-base-color;
+        color: $white-color;
       }
     }
   }
