@@ -2,8 +2,6 @@ import React,{Component} from 'react';
 import {connect} from 'react-redux';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import SelectBox from '../components/common/SelectBox';
-import Button from '../components/common/Button';
 import Modal from '../components/common/Modal';
 import ErrorBoundary from '../components/common/ErrorBoundary';
 import Login from '../components/LoginFlow/Login';
@@ -16,14 +14,7 @@ import Tabcomponents from '../components/Tabber';
 class Home extends Component{
     constructor(props) {
         super(props);
-        this.state={
-            treeSelected: ''
-        }
     }
-
-    handleTreeChange = (tree) => {
-        this.setState({ treeSelected: tree })
-    };
 
     onChangeHandler = (e) => {
         this.setState({[e.target.name]: e.target.value})
@@ -53,8 +44,6 @@ class Home extends Component{
     };
 
     render(){
-        const treeOptions = ["Mango", "Peepal", "Banana", "Coconut"];
-        const { treeSelected } = this.state;
         let modalConfig = this.modalConfig('login');
 
         return (
