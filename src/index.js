@@ -22,7 +22,6 @@ class ContextProvider extends React.Component {
 }
 
 // main app
-import App from './containers/app';
 import store from './store';
 import AppRoutes from './routes';
 const context = {

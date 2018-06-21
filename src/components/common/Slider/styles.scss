@@ -1,4 +1,5 @@
-@import "../../scss/variable";
+@import "../../../scss/variable";
+
 .slider-wrap{
   background: $light-grey-color;
 }
@@ -39,9 +40,16 @@
 .custom-slider {
   .slick-dots {
     bottom: 15px;
-    li button:before{
-      font-size: 14px;
-      color:$theme-base-color;
+    li {
+      &.slick-active {
+        button:before{
+          opacity: 1;
+        }
+      }
+      button:before {
+        font-size: 14px;
+        color: $theme-base-color;
+      }
     }
   }
 }

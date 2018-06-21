@@ -8,7 +8,7 @@ import Login from '../components/LoginFlow/Login';
 import Register from '../components/LoginFlow/Register';
 import ForgotPassword from '../components/LoginFlow/Forgotpassword';
 import ChangePassword from '../components/LoginFlow/Changepassword';
-import SliderComponent from '../components/Slider';
+import SliderComponent from '../components/common/Slider';
 import Tabcomponents from '../components/Tabber';
 
 class Home extends Component{
@@ -39,7 +39,8 @@ class Home extends Component{
                 return <Modal title="Change Password" buttonText="Submit"  handleSubmit={this.buttonClick} links={['Login']} children={<ChangePassword/>} />
                 break;
             default :
-                null
+                return null;
+                break;
         }
     };
 

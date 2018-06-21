@@ -12,13 +12,33 @@ export default class Header extends Component {
         }
     }
 
+    handleProfileDropdown = (option) => {
+        console.log('option selected', option);
+    };
+
     render () {
         const rightNav =
             this.state.adminAuth ?
                 <div className="text-align-left header-right-nav">
                     <ul>
-                        <li><Link to="/">Employee Master</Link></li>
-                        <li><Link to="/">Tool Master</Link></li>
+                        <li><Dropdown
+                            header="Employee Master"
+                            listItems={[
+                                {text:'Role Master Panel', funcVal:"roleMaster"},
+                                {text:'Employee Master Panel',funcVal:"employeeMaster"}
+                            ]}
+                            handleItemClick={this.handleProfileDropdown}
+                        /></li>
+                        <li><Dropdown
+                            header="Tool Master"
+                            listItems={[
+                                {text:'Tool Master', funcVal:"toolMaster"},
+                                {text:'Update Quantity',funcVal:"updateQty"},
+                                {text:'Tool Master Variant',funcVal:"toolMasterVariant"},
+                                {text:'Tool Category Master',funcVal:"toolCategoryMaster"},
+                            ]}
+                            handleItemClick={this.handleProfileDropdown}
+                        /></li>
                         <li><Link to="/">Review Orders</Link></li>
                         {/*make a common dropdown*/}
                         <li className="pull-right">
@@ -26,8 +46,10 @@ export default class Header extends Component {
                                 header="Hi Admin"
                                 headerIcon="icon-login"
                                 listItems={[
-                                {text:'My Account', funcVal:"myAccount"},{text:'Logout',funcVal:"logout"}
+                                    {text:'My Account', funcVal:"myAccount"},
+                                    {text:'Logout',funcVal:"logout"}
                                 ]}
+                                handleItemClick={this.handleProfileDropdown}
                             />
                         </li>
                     </ul>

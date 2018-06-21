@@ -20,7 +20,6 @@ export default class Admin extends Component {
         return(
             <div className="admin-wrapper">
                 <Header/>
-                <AdminLogin />
             </div>
         )
     }
