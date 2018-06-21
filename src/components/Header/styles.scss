@@ -41,7 +41,15 @@
       padding-left: 30px;
       font-size: 18px;
       line-height: 25px;
+      position: relative;
       cursor: pointer;
+      a{
+        display: block;
+        padding: 10px 0;
+        &:hover{
+          color:$btn-dark-bg;
+        }
+      }
       i{
         margin-right: 10px;
       }

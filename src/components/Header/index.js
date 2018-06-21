@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import Dropdown from '../common/Dropdown';
 
 
 export default class Header extends Component {
@@ -16,21 +17,26 @@ export default class Header extends Component {
             this.state.adminAuth ?
                 <div className="text-align-left header-right-nav">
                     <ul>
-                        <li>Employee Master</li>
-                        <li>Tool Master</li>
-                        <li>Review Orders</li>
+                        <li><Link to="/">Employee Master</Link></li>
+                        <li><Link to="/">Tool Master</Link></li>
+                        <li><Link to="/">Review Orders</Link></li>
                         {/*make a common dropdown*/}
                         <li className="pull-right">
-                            <label>Hi Admin</label>
-                            <a href="#"><i className="icon-login" />Logout</a>
+                            <Dropdown
+                                header="Hi Admin"
+                                headerIcon="icon-login"
+                                listItems={[
+                                {text:'My Account', funcVal:"myAccount"},{text:'Logout',funcVal:"logout"}
+                                ]}
+                            />
                         </li>
                     </ul>
                 </div>
                 :
                 <div className="header-right-nav">
                     <ul>
-                        <li><Link to="/"><i className="icon-cart" /> Cart</Link></li>
-                        <li><a href="#"><i className="icon-login" />Login</a></li>
+                        <li><Link to="/"><i className="icon-cart" />Cart</Link></li>
+                        <li><Link to="/"><i className="icon-login" />Login</Link></li>
                     </ul>
                 </div>;
         return (
