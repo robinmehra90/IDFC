@@ -3,6 +3,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import Header from '../../components/Header';
 import AdminLogin from './AdminLogin';
 import ReviewOrders from './ReviewOrders';
+import ToolMaster from './ToolMaster';
 
 class Admin extends Component {
     constructor(props) {
@@ -32,6 +33,7 @@ class Admin extends Component {
                 <Switch>
                     <Route path={`${match.path}/reviewOrders`} component={ReviewOrders} />
                 </Switch>
+                <ToolMaster/>
             </div>
         )
     }

@@ -1,0 +1,26 @@
+@import "../../../scss/variable";
+
+
+table{
+  width: 100%;
+  text-align: left;
+  thead{
+    background: $theme-base-color;
+    color: $white-color;
+    font-size: 18px;
+  }
+  th{
+    padding: 10px 15px;
+  }
+  tbody{
+    font-size: 15px;
+  }
+  tr{
+    &:nth-child(even){
+      background:rgba(0,0,0,0.1);
+    }
+    td{
+      padding: 7px 15px;
+    }
+  }
+}
