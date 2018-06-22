@@ -9,7 +9,7 @@ import Register from '../components/LoginFlow/Register';
 import ForgotPassword from '../components/LoginFlow/Forgotpassword';
 import ChangePassword from '../components/LoginFlow/Changepassword';
 import SliderComponent from '../components/common/Slider';
-import Tabcomponents from '../components/Tabber';
+import Tabcomponents from '../components/common/Tabber';
 
 class Home extends Component{
     constructor(props) {

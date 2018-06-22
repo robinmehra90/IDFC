@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Header from '../../components/Header';
-import AdminLogin from './AdminLogin';
+import ToolMaster from './ToolMaster';
 
 export default class Admin extends Component {
     constructor(props) {
@@ -20,6 +20,7 @@ export default class Admin extends Component {
         return(
             <div className="admin-wrapper">
                 <Header/>
+                <ToolMaster/>
             </div>
         )
     }
