@@ -12,7 +12,7 @@ export default class AppRoutes extends React.Component {
         return (
             <BrowserRouter>
                 <Switch>
-                    <Route exact path="/adminLogin" component={AdminLogin}/>
+                    <Route path="/adminLogin" component={AdminLogin}/>
                     <Route path='/' component={App}/>
                     <Route component={PathNotFound}/>
                 </Switch>

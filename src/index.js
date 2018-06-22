@@ -34,6 +34,7 @@ const context = {
 };
 
 ReactDOM.render(
+
     <Provider store={store}>
         <ContextProvider context={context}>
             <AppRoutes />
