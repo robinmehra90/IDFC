@@ -17,17 +17,13 @@ class Admin extends Component {
         if(!this.state.adminAuth) {
             this.props.history.push('/adminlogin');
         }
-        else {
+        else if( !(this.props.location.pathname.split('/')[2]) ){
             this.props.history.push('/admin/reviewOrders');
         }
+        else {
+            this.props.history.push('/pathNotFound');
+        }
     }
-
-    adminNavHandler = (navOption) => {
-        console.log('navOption', navOption);
-        this.setState({tabOpen: navOption}, () => {
-            this.props.history.push("/admin/"+navOption);
-        })
-    };
 
     render() {
         const { match } = this.props;
