@@ -4,41 +4,17 @@
 import React  from 'react';
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux';
-import PropTypes from 'prop-types';
-
-// Context Provider for isomorphic style loader
-class ContextProvider extends React.Component {
-    static childContextTypes = {
-        insertCss: PropTypes.func,
-    };
-
-    getChildContext() {
-        return { ...this.props.context }
-    }
-
-    render () {
-        return <AppRoutes { ...this.props } />
-    }
-}
-
-// main app
+// import PropTypes from 'prop-types';
+import { BrowserRouter } from 'react-router-dom';
 import store from './store';
 import AppRoutes from './routes';
-const context = {
-    insertCss: (...styles) => {
-        const removeCss = styles.map(x => x._insertCss());
-        return () => {
-            removeCss.forEach(f => f());
-        };
-    },
-};
 
 ReactDOM.render(
 
     <Provider store={store}>
-        <ContextProvider context={context}>
+        <BrowserRouter>
             <AppRoutes />
-        </ContextProvider>
+        </BrowserRouter>
     </Provider>,
     document.getElementById('app')
 );
