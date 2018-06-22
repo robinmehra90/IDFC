@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
+import { Route, Switch } from 'react-router-dom';
+
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Modal from '../components/common/Modal';
@@ -8,21 +10,16 @@ import Login from '../components/LoginFlow/Login';
 import Register from '../components/LoginFlow/Register';
 import ForgotPassword from '../components/LoginFlow/Forgotpassword';
 import ChangePassword from '../components/LoginFlow/Changepassword';
-import SliderComponent from '../components/common/Slider';
-import Tabcomponents from '../components/Tabber';
+import Home from './Home';
 
-class Home extends Component{
+import Admin from './Admin';
+import AdminLogin from './Admin/AdminLogin';
+import ReviewOrders from './Admin/ReviewOrders';
+
+class App extends Component{
     constructor(props) {
         super(props);
     }
-
-    onChangeHandler = (e) => {
-        this.setState({[e.target.name]: e.target.value})
-    };
-
-    buttonClick = () => {
-        alert("Heisenberg")
-    };
 
     modalConfig = (modalType) => {
         switch(modalType){
@@ -52,19 +49,16 @@ class Home extends Component{
                 <ErrorBoundary>
                     <Header/>
                 </ErrorBoundary>
-                <ErrorBoundary>
-                    <SliderComponent />
-                </ErrorBoundary>
-                <ErrorBoundary>
-                    <Tabcomponents />
-                </ErrorBoundary>
+                <Switch>
+                    <Route exact path='/' component={Home}/>
+                    <Route path='/admin' component={Admin}/>
+                </Switch>
                 <ErrorBoundary>
                     <Footer/>
                 </ErrorBoundary>
-
             </div>
         )
     }
 }
 
-export default connect(state => state)(Home);
+export default connect(state => state)(App);

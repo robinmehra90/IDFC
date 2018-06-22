@@ -1,12 +1,15 @@
 import React, {Component} from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
 import Header from '../../components/Header';
 import AdminLogin from './AdminLogin';
+import ReviewOrders from './ReviewOrders';
 
-export default class Admin extends Component {
+class Admin extends Component {
     constructor(props) {
         super(props);
         this.state={
-            adminAuth: true
+            adminAuth: true,
+            tabOpen: 'reviewOrders'
         }
     }
 
@@ -16,11 +19,23 @@ export default class Admin extends Component {
         }
     }
 
+    adminNavHandler = (navOption) => {
+        console.log('navOption', navOption);
+        this.setState({tabOpen: navOption}, () => {
+            this.props.history.push("/admin/"+navOption);
+        })
+    };
+
     render() {
+        const { match } = this.props;
         return(
             <div className="admin-wrapper">
-                <Header/>
+                <Switch>
+                    <Route path={`${match.path}/reviewOrders`} component={ReviewOrders} />
+                </Switch>
             </div>
         )
     }
 }
+
+export default Admin;

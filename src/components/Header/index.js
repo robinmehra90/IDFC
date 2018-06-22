@@ -17,6 +17,7 @@ export default class Header extends Component {
     };
 
     render () {
+        const { adminNavHandler } = this.props;
         const rightNav =
             this.state.adminAuth ?
                 <div className="text-align-left header-right-nav">
@@ -27,7 +28,7 @@ export default class Header extends Component {
                                 {text:'Role Master Panel', funcVal:"roleMaster"},
                                 {text:'Employee Master Panel',funcVal:"employeeMaster"}
                             ]}
-                            handleItemClick={this.handleProfileDropdown}
+                            handleItemClick={adminNavHandler}
                         /></li>
                         <li><Dropdown
                             header="Tool Master"
@@ -37,10 +38,26 @@ export default class Header extends Component {
                                 {text:'Tool Master Variant',funcVal:"toolMasterVariant"},
                                 {text:'Tool Category Master',funcVal:"toolCategoryMaster"},
                             ]}
-                            handleItemClick={this.handleProfileDropdown}
+                            handleItemClick={adminNavHandler}
                         /></li>
-                        <li><Link to="/">Review Orders</Link></li>
-                        {/*make a common dropdown*/}
+                        <li><Link to="/admin/reviewOrders">Review Orders</Link></li>
+                        <li className="pull-right">
+                            <Dropdown
+                                header="Hi Admin"
+                                headerIcon="icon-login"
+                                dropDownWidth="130px"
+                                listItems={[
+                                    {text:'Logout',funcVal:"logout"}
+                                ]}
+                                handleItemClick={this.handleProfileDropdown}
+                            />
+                        </li>
+                    </ul>
+                </div>
+                :
+                <div className="header-right-nav">
+                    <ul>
+                        <li><Link to="/"><i className="icon-cart" />Cart</Link></li>
                         <li className="pull-right">
                             <Dropdown
                                 header="Hi Admin"
@@ -54,20 +71,13 @@ export default class Header extends Component {
                             />
                         </li>
                     </ul>
-                </div>
-                :
-                <div className="header-right-nav">
-                    <ul>
-                        <li><Link to="/"><i className="icon-cart" />Cart</Link></li>
-                        <li><Link to="/"><i className="icon-login" />Login</Link></li>
-                    </ul>
                 </div>;
         return (
             <header className="header">
                 <div className="container">
                     <div className="header-logo">
                         <a href="/">
-                            <img src="./public/images/logo.png" alt="logo" />
+                            <img src="/public/images/logo.png" alt="logo" />
                         </a>
                     </div>
                     {rightNav}
