@@ -43,7 +43,7 @@ export default class TableComponent extends Component {
 
         return (
             <div className={"custom-table " + (classNames ? classNames : '')} style={{width}}>
-                <table border='0' cellpadding="0" cellspacing="0">
+                <table border='0' cellPadding="0" cellSpacing="0">
                     {tableHeaders}
                     <tbody>
                         { tableData }
