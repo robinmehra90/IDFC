@@ -6,7 +6,7 @@ import './styles.scss';
 export default class Tabcomponents extends Component {
     render () {
         return (
-            <Tabs>
+            <Tabs className="container">
                 <TabList>
                     <Tab>Title 1</Tab>
                     <Tab>Title 2</Tab>

@@ -1,0 +1,15 @@
+@import "../../../scss/variable";
+
+.react-tabs__tab-list{
+  margin: 40px 0 !important;
+  .react-tabs__tab{
+    font-size: 20px;
+    border:2px solid transparent !important;
+    padding: 7px 25px !important;
+    &.react-tabs__tab--selected{
+      border:2px solid transparent !important;
+      border-bottom:2px solid $theme-base-color !important;
+      color:$theme-base-color;
+    }
+  }
+}

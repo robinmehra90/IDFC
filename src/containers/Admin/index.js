@@ -5,12 +5,13 @@ import AdminLogin from './AdminLogin';
 import ReviewOrders from './ReviewOrders';
 import ToolMaster from './ToolMaster';
 
+
 class Admin extends Component {
     constructor(props) {
         super(props);
         this.state={
             adminAuth: true,
-            tabOpen: 'reviewOrders'
+            tabOpen: 'ToolMaster'
         }
     }
 
@@ -19,7 +20,7 @@ class Admin extends Component {
             this.props.history.push('/adminlogin');
         }
         else {
-            this.props.history.push('/admin/reviewOrders');
+            this.props.history.push('/admin/ToolMaster');
         }
     }
 
@@ -35,9 +36,8 @@ class Admin extends Component {
         return(
             <div className="admin-wrapper">
                 <Switch>
-                    <Route path={`${match.path}/reviewOrders`} component={ReviewOrders} />
+                    <Route path={`${match.path}/ToolMaster`} component={ToolMaster} />
                 </Switch>
-                <ToolMaster/>
             </div>
         )
     }

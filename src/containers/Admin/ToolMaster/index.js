@@ -42,7 +42,8 @@ export default class ToolMaster extends Component {
 
         return(
             <div className="container">
-                <TableComponent data={tablelist} />
+                <h3 className="page-title">Tool Master</h3>
+                <TableComponent data={tablelist} action={true} />
             </div>
         )
     }
