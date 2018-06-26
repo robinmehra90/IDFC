@@ -1,6 +1,8 @@
 import React,{ Component } from 'react';
 import { withRouter, Link } from 'react-router-dom';
 import './styles.scss';
+import IconCart from '../common/IconSvg/IconCart';
+import IconUser from '../common/IconSvg/IconUser';
 import Dropdown from '../common/Dropdown';
 
 
@@ -50,7 +52,7 @@ class Header extends Component {
                         <li className="pull-right">
                             <Dropdown
                                 header="Hi Admin"
-                                headerIcon="icon-login"
+                                headerIcon={<IconUser width="25" height="25"/>}
                                 dropDownWidth="130px"
                                 listItems={[
                                     {text:'Logout',funcVal:"logout"}
@@ -63,11 +65,13 @@ class Header extends Component {
                 :
                 <div className="header-right-nav">
                     <ul>
-                        <li><Link to="/"><i className="icon-cart" />Cart</Link></li>
+                        <li><Link to="/">
+                            <IconCart width="25" height="25"/>
+                            Cart</Link></li>
                         <li className="pull-right">
                             <Dropdown
                                 header="Hi Admin"
-                                headerIcon="icon-login"
+                                headerIcon={<IconUser width="25" height="25"/>}
                                 dropDownWidth="130px"
                                 listItems={[
                                     {text:'My Account', funcVal:"myAccount"},

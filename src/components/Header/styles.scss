@@ -1,19 +1,9 @@
 @import "../../scss/variable";
 
-.icon-cart{
-  background: url(../../public/images/cart-icon.png) center center;
-  width: 25px;
-  height: 25px;
+.icon{
   display: inline-block;
   vertical-align: middle;
-}
-
-.icon-login{
-  background: url(../../public/images/login-icon.png) center center;
-  width: 22px;
-  height: 24px;
-  display: inline-block;
-  vertical-align: middle;
+  fill:$base-color;
 }
 
 .header{

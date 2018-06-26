@@ -16,6 +16,9 @@
       .arrow{
         border-color:$theme-base-color ;
       }
+      .icon{
+        fill:$btn-dark-bg;
+      }
     }
     ul.dropdown-menu {
       display: block;
