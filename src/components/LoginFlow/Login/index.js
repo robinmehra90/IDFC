@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TextBox from '../../common/TextBox';
+import Input from '../../common/Input';
 
 class Login extends Component {
     constructor(props) {
@@ -17,13 +17,13 @@ class Login extends Component {
         const { empID, password } = this.state;
         return(
                 <div className="login-modal">
-                    <TextBox
+                    <Input
                         type="text" name="empID" value={empID}
                         placeholder="Enter Employee ID"
                         title="EMPLOYEE ID"
                         onChangeHandler={this.onChangeHandler}
                     />
-                    <TextBox
+                    <Input
                         type="password" name="password" value={password}
                         placeholder="Enter Password"
                         title="Password"

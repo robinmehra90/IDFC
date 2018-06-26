@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import './styles.scss';
 
 export default class Card extends Component {
@@ -8,18 +8,18 @@ export default class Card extends Component {
     }
 
     render() {
-        const { title, classNames, descripdtion, links } = this.props;
-        const links = links.map((link) => {
-            return (<link to={link}>{link}</link>)
+        const { title, classNames, description, links } = this.props;
+        const navLinks = links.map((link) => {
+            return (<Link to={link}>{link}</Link>)
         });
         return(
             <div className={classNames}>
                 <h3 className="card-title">{title}</h3>
 
                 {
-                    descripdtion
+                    description
                 }
-                {links}
+                {navLinks}
 
             </div>
         )

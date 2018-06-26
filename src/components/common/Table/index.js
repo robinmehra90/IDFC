@@ -9,7 +9,7 @@ export default class TableComponent extends Component {
     }
     getTableDataRows(data,action) {
         if (data.rows && data.rows.length) {
-             return data.rows.map(function(row, key) {
+             return data.rows.map((row, key) => {
                 return (
                     <tr key={key}>
                         <td>{key + 1}</td>
@@ -45,20 +45,19 @@ export default class TableComponent extends Component {
 
     render () {
         const { width,classNames, action, data} = this.props;
-        console.log(action)
+        // console.log(action)
         let tableHeaders = (<thead>
                 <tr>
                     <th>S.No</th>
-                    {data.columns.map(function(columnName, key) {
+                    {data.columns.map((columnName, key) => {
                         return <th key={key}>{columnName}</th>;
                     })}
                     {
                         action ? (<th>Action</th>): null
                     }
                 </tr>
-            </thead>);
-
-        var tableData = this.getTableDataRows(data,action);
+            </thead>),
+        tableData = this.getTableDataRows(data,action);
 
         return (
             <div className={"custom-table " + (classNames ? classNames : '')} style={{width}}>
@@ -71,6 +70,5 @@ export default class TableComponent extends Component {
             </div>
         )
     }
-
 }
 

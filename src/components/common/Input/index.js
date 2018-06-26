@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './styles.scss'
 
-export default class TextBox extends Component {
+export default class Input extends Component {
     render() {
         const { type, value, name, onChangeHandler, placeholder, classNames, title, error } = this.props;
         return(

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Modal from '../../common/Modal';
-import TextBox from '../../common/TextBox';
+import Input from '../../common/Input';
 
 class ForgotPassword extends Component {
     constructor(props) {
@@ -21,13 +21,13 @@ class ForgotPassword extends Component {
         return(
             <div className="forgot-modal">
                 <h4>Enter your employee ID and we’ll email you a password</h4>
-                <TextBox
+                <Input
                     type="text" name="empID" value={empID}
                     placeholder="Enter Employee ID"
                     title="EMPLOYEE ID"
                     onChangeHandler={this.onChangeHandler}
                 />
-                <TextBox
+                <Input
                     type="password" name="emailID" value={emailID}
                     placeholder="Enter Email Id"
                     title="Email Id"

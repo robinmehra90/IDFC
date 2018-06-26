@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Button from '../../../components/common/Button';
-import TextBox from '../../../components/common/TextBox';
+import Input from '../../../components/common/Input';
 import './styles.scss';
 
 export default class AdminLogin extends Component {
@@ -27,13 +27,13 @@ export default class AdminLogin extends Component {
         return(
             <div className="admin-login">
                 <h3>Admin Login</h3>
-                <TextBox
+                <Input
                     type="text" name="empID" value={empID}
                     placeholder="Enter Employee ID"
                     title="EMPLOYEE ID"
                     onChangeHandler={this.onChangeHandler}
                 />
-                <TextBox
+                <Input
                     type="password" name="password" value={password}
                     placeholder="Enter Password"
                     title="Password"

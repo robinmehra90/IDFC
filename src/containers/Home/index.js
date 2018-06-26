@@ -13,9 +13,9 @@ class Home extends Component {
                 <ErrorBoundary>
                     <SliderComponent/>
                 </ErrorBoundary>
-                <ErrorBoundary>
-                    <Tabcomponents/>
-                </ErrorBoundary>
+                {/*<ErrorBoundary>*/}
+                    {/*<Tabcomponents/>*/}
+                {/*</ErrorBoundary>*/}
             </div>
         )
     }

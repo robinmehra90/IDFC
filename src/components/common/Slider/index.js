@@ -27,7 +27,7 @@ export default  class SliderComponent extends Component {
                         <Slider {...settings}>
                             <div className="slider-item">
                                 <div className="slider-img">
-                                    <img src="../../../public/images/banner-img2.png" alt="" />
+                                    <img src="/public/images/banner-img2.png" alt="" />
                                 </div>
                                 <div className="slider-content">
                                     <h3>Is it a pen? Is it a calculator?</h3>
@@ -37,7 +37,7 @@ export default  class SliderComponent extends Component {
                             </div>
                             <div className="slider-item">
                                 <div className="slider-img">
-                                    <img src="../../../public/images/banner-img1.png" alt="" />
+                                    <img src="/public/images/banner-img1.png" alt="" />
                                 </div>
                                 <div className="slider-content">
                                     <h3>Tools, Merchandise & More</h3>

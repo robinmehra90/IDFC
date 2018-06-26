@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import TextBox from '../../common/TextBox';
+import Input from '../../common/Input';
 
 class Register extends Component {
     constructor(props) {
@@ -18,19 +18,19 @@ class Register extends Component {
         const { empID, password, confirmPassword } = this.state;
         return(
             <div className="register-modal">
-                <TextBox
+                <Input
                     type="text" name="empID" value={empID}
                     placeholder="Enter Employee ID"
                     title="EMPLOYEE ID"
                     onChangeHandler={this.onChangeHandler}
                 />
-                <TextBox
+                <Input
                     type="password" name="password" value={password}
                     placeholder="Enter Password"
                     title="Password"
                     onChangeHandler={this.onChangeHandler}
                 />
-                <TextBox
+                <Input
                     type="password" name="confirmPassword" value={confirmPassword}
                     placeholder="Enter Confirm Password"
                     title="Confirm Password"

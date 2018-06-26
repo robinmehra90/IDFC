@@ -14,18 +14,12 @@ export default class Modal extends Component {
         document.getElementsByTagName('HTML')[0].style.overflow = 'hidden'
     }
 
-    handleSubmit = () => {
-        document.getElementsByTagName('HTML')[0].style.overflow = 'auto';
-        this.props.handleSubmit();
-    };
-
-    handleCancel = () => {
+    componentWillUnmount() {
         document.getElementsByTagName('HTML')[0].styleoverflow = 'auto';
-        this.props.handleCancel();
-    };
+    }
 
     render () {
-        const { width, buttonText, title, children, handleCancel, links, classNames } = this.props;
+        const { width, buttonText, title, children, handleCancel, handleSubmit, links, classNames } = this.props;
         const modalLinks = links ?
             (links.map((link, key) => {
                 return (<div key={key}><Link to="/fd">{link}</Link></div>)
@@ -41,11 +35,11 @@ export default class Modal extends Component {
                         {children}
                     </div>
                     <footer>
-                        <Button className="footer-button" onClick={this.handleSubmit}>{buttonText}</Button>
+                        <Button className="footer-button" onClick={handleSubmit}>{buttonText}</Button>
                         <div className="footer-links">
                             {
                                 handleCancel ?
-                                    <button onClick={this.handleCancel}>Cancel</button>
+                                    <button onClick={handleCancel}>Cancel</button>
                                     : null
                             }
                             {modalLinks}
