@@ -11,7 +11,7 @@ export default class Dropdown extends Component {
             <div className="dropdown">
                 <label>
                     {headerIcon ?
-                        <i className={headerIcon} />
+                        <span>{headerIcon} </span>
                         : null
                     }
                     {header}

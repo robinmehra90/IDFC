@@ -1,6 +1,8 @@
 import React,{ Component } from 'react';
 import { Link } from 'react-router-dom';
 import './styles.scss';
+import IconCart from '../common/IconSvg/IconCart';
+import IconUser from '../common/IconSvg/IconUser';
 import Dropdown from '../common/Dropdown';
 
 
@@ -15,6 +17,7 @@ export default class Header extends Component {
     handleProfileDropdown = (option) => {
         console.log('option selected', option);
     };
+
 
     render () {
         const { adminNavHandler } = this.props;
@@ -44,7 +47,7 @@ export default class Header extends Component {
                         <li className="pull-right">
                             <Dropdown
                                 header="Hi Admin"
-                                headerIcon="icon-login"
+                                headerIcon={<IconUser width="25" height="25"/>}
                                 dropDownWidth="130px"
                                 listItems={[
                                     {text:'Logout',funcVal:"logout"}
@@ -57,11 +60,13 @@ export default class Header extends Component {
                 :
                 <div className="header-right-nav">
                     <ul>
-                        <li><Link to="/"><i className="icon-cart" />Cart</Link></li>
+                        <li><Link to="/">
+                            <IconCart width="25" height="25"/>
+                            Cart</Link></li>
                         <li className="pull-right">
                             <Dropdown
                                 header="Hi Admin"
-                                headerIcon="icon-login"
+                                headerIcon={<IconUser width="25" height="25"/>}
                                 dropDownWidth="130px"
                                 listItems={[
                                     {text:'My Account', funcVal:"myAccount"},

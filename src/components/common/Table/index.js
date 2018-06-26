@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import IconDelete from '../IconSvg/IconDelete';
+import IconEdit from '../IconSvg/IconEdit';
 import './styles.scss';
 
 export default class TableComponent extends Component {
@@ -18,7 +20,17 @@ export default class TableComponent extends Component {
                             })
                         }
                         {
-                            action ? (<td><button>Edit</button><button>Delete</button></td>): null
+                            action ? (
+                                <td>
+                                <button type="button">
+                                    <IconDelete/>
+                                </button>
+                                <button type="button">
+                                    <IconEdit/>
+                                </button>
+
+                                </td>)
+                                : null
                         }
                     </tr>
                 )
