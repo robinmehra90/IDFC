@@ -37,9 +37,8 @@ export default class TableComponent extends Component {
                         return <th key={key}>{columnName}</th>;
                     })}
                 </tr>
-            </thead>);
-
-        var tableData = this.getTableDataRows(data);
+            </thead>),
+            tableData = this.getTableDataRows(data);
 
         return (
             <div className={"custom-table " + (classNames ? classNames : '')} style={{width}}>

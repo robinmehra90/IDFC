@@ -8,7 +8,7 @@ export default class Footer extends Component {
         return (
             <footer className="footer">
                 <div className="container">
-                    <p>IDFC Mutual Fund © 2017</p>
+                    <p>IDFC Mutual Fund © 2018</p>
                 </div>
             </footer>
         )

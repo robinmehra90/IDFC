@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "build": "webpack --config ./webpack/webpack.dev.config.js --mode production",
+    "build": "webpack --config ./webpack/webpack.dev.config.js --mode development",
     "build:production": "cross-env NODE_ENV=production webpack-dev-server --config ./webpack/webpack.dev.config.js --mode production",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -29,7 +29,6 @@
     "babel-polyfill": "^6.26.0",
     "babel-regenerator-runtime": "^6.5.0",
     "express": "^4.16.3",
-    "postcss-loader": "^2.1.5",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-loadable": "^5.4.0",
