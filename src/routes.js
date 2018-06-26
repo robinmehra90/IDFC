@@ -6,7 +6,7 @@ import PathNotFound from './containers/pathNotFound/pathNotFound';
 import AdminLogin from './containers/Admin/AdminLogin';
 import Admin from './containers/Admin';
 import Header from "./components/Header/index";
-import Footer from "./components/Footer/index";
+import {Footer} from "./components/Footer/index";
 import './scss/reset.scss';
 
 
