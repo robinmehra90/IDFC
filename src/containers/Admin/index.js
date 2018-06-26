@@ -5,6 +5,7 @@ import AdminLogin from './AdminLogin';
 import ReviewOrders from './ReviewOrders';
 import ToolMaster from './ToolMaster';
 
+
 class Admin extends Component {
     constructor(props) {
         super(props);
@@ -18,7 +19,7 @@ class Admin extends Component {
         if(!this.state.adminAuth) {
             this.props.history.push('/adminlogin');
         }
-        else if( !(this.props.location.pathname.split('/')[2]) ){
+        else if( !(this.props.location.pathname.split('/')[2]) ) {
             this.props.history.push('/admin/reviewOrders');
         }
         else {
@@ -31,9 +32,8 @@ class Admin extends Component {
         return(
             <div className="admin-wrapper">
                 <Switch>
-                    <Route path={`${match.path}/reviewOrders`} component={ReviewOrders} />
+                    <Route path={`${match.path}/reviewOrders`} component={ToolMaster} />
                 </Switch>
-                <ToolMaster/>
             </div>
         )
     }

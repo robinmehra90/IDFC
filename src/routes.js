@@ -20,21 +20,11 @@ class AppRoutes extends React.Component {
         }
     }
 
-    adminNavHandler = (navOption) => {
-        console.log('navOption', navOption);
-        this.setState({tabOpen: navOption}, () => {
-            this.props.history.push("/admin/"+navOption);
-        })
-    };
-
     render () {
         const { adminAuthPage } = this.state;
         return (
             <div>
-                {!adminAuthPage ?
-                    <Header adminNavHandler={this.adminNavHandler} />
-                    : null
-                }
+                <Header />
                 <Switch>
                     <Route exact path='/' component={Home}/>
                     <Route path="/adminLogin" component={AdminLogin}/>

@@ -1,10 +1,10 @@
 import React,{ Component } from 'react';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 import './styles.scss';
 import Dropdown from '../common/Dropdown';
 
 
-export default class Header extends Component {
+class Header extends Component {
     constructor(props) {
         super(props);
         this.state={
@@ -16,8 +16,14 @@ export default class Header extends Component {
         console.log('option selected', option);
     };
 
+    adminNavHandler = (navOption) => {
+        console.log('navOption', navOption);
+        this.setState({tabOpen: navOption}, () => {
+            this.props.history.push("/admin/"+navOption);
+        })
+    };
+
     render () {
-        const { adminNavHandler } = this.props;
         const rightNav =
             this.state.adminAuth ?
                 <div className="text-align-left header-right-nav">
@@ -28,7 +34,7 @@ export default class Header extends Component {
                                 {text:'Role Master Panel', funcVal:"roleMaster"},
                                 {text:'Employee Master Panel',funcVal:"employeeMaster"}
                             ]}
-                            handleItemClick={adminNavHandler}
+                            handleItemClick={this.adminNavHandler}
                         /></li>
                         <li><Dropdown
                             header="Tool Master"
@@ -38,7 +44,7 @@ export default class Header extends Component {
                                 {text:'Tool Master Variant',funcVal:"toolMasterVariant"},
                                 {text:'Tool Category Master',funcVal:"toolCategoryMaster"},
                             ]}
-                            handleItemClick={adminNavHandler}
+                            handleItemClick={this.adminNavHandler}
                         /></li>
                         <li><Link to="/admin/reviewOrders">Review Orders</Link></li>
                         <li className="pull-right">
@@ -86,3 +92,5 @@ export default class Header extends Component {
         )
     }
 }
+
+export default withRouter(Header);

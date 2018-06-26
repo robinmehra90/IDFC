@@ -5,7 +5,7 @@ export default class TableComponent extends Component {
     constructor(props) {
         super(props);
     }
-    getTableDataRows(data) {
+    getTableDataRows(data,action) {
         if (data.rows && data.rows.length) {
              return data.rows.map(function(row, key) {
                 return (
@@ -15,6 +15,9 @@ export default class TableComponent extends Component {
                             data.columns.map((columnName, key) => {
                                 return <td key={key}>{ row[columnName] }</td>
                             })
+                        }
+                        {
+                            action ? (<td><button>Edit</button><button>Delete</button></td>): null
                         }
                     </tr>
                 )
@@ -29,16 +32,21 @@ export default class TableComponent extends Component {
     }
 
     render () {
-        const { width,classNames, imageDetails, data} = this.props;
+        const { width,classNames, action, data} = this.props;
+        console.log(action)
         let tableHeaders = (<thead>
                 <tr>
-                    <th>S.no</th>
+                    <th>S.No</th>
                     {data.columns.map(function(columnName, key) {
                         return <th key={key}>{columnName}</th>;
                     })}
+                    {
+                        action ? (<th>Action</th>): null
+                    }
                 </tr>
-            </thead>),
-            tableData = this.getTableDataRows(data);
+            </thead>);
+
+        var tableData = this.getTableDataRows(data,action);
 
         return (
             <div className={"custom-table " + (classNames ? classNames : '')} style={{width}}>

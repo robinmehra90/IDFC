@@ -5,7 +5,8 @@ export default class Dropdown extends Component {
     render() {
         const { listItems, header, headerIcon, handleItemClick, dropDownWidth } = this.props;
         let list = listItems.map((item, key) => {
-            return(<li key={key} className="dropdown-item" onClick={() => handleItemClick(item.funcVal)}>{item.text}</li>)
+            return(<li key={key} className="dropdown-item"
+                       onClick={() => handleItemClick(item.funcVal)}>{item.text}</li>)
         });
         return(
             <div className="dropdown">
